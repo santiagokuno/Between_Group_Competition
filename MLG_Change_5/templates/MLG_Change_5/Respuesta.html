@@ -1,0 +1,84 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Respuesta a pregunta de comprensión.
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Su respuesta <span  class="text-info">{{ player.question_1 }}</span> de las ganancias PARCIALES de la ronda fue {% if player.question_correct_1 %}<span class="text-success">correcta</span>
+        {% else %}<span class="text-danger">incorrecta.</span>{% endif %}
+    </p>
+
+    <p>
+        Su respuesta <span  class="text-info">{{ player.question_2 }}</span> de las ganancias FINALES de la ronda fue {% if player.question_correct_2 %}<span class="text-success">correcta</span>
+        {% else %}<span class="text-danger">incorrecta.</span>{% endif %}
+    </p>
+
+    <p>
+        Suponga que usted extrajo 3 unidades.<br>
+        Luego que todos decidieran cuánto extraer, quedaron 10 unidades del recurso compartido.<br>
+        <br>
+        La suma de sus ganancias parciales y las de los otros tres miembros de su grupo es de 24.0<br>
+        La suma de las ganancias parciales de los otros cuatro grupos es de 18.5, 21.8, 23.2 y 22.0.<br>
+    </p>
+
+    <p>
+        ¿Cuales son sus ganancias PARCIALES Y FINALES de la ronda?
+    </p>
+
+   <p>
+        <strong>Solución:</strong><br>
+        Las ganancias PARCIALES son 6.5. <br>
+        Las ganancias FINALES 7.2.
+    </p>
+
+    <p>
+        <strong>Explicación:</strong><br>
+        Ganancias PARCIALES = [3 puntos de extracción] + [0.35 x 10 puntos de recurso compartido] = 6.5 puntos.<br>
+        Su grupo tiene las mayores ganancias de todos los grupos. El ranking correspondiente es 1 y el multiplicador 1.10.<br>
+        Por lo tanto: Ganancias FINALES = 1.10 x 6.5 = 7.2
+    </p>
+
+
+
+<div class="box effect7">
+
+    <p>
+        <b>Instrucciones:</b>
+    </p>
+
+    <p>
+        Usted está en un grupo con otros tres (3) participantes.<br>
+        El grupo será el mismo durante todo el bloque.<br>
+        Cada grupo tiene a su disposición 20 unidades de un recurso compartido en cada ronda.<br>
+        Usted tiene derecho a extraer entre cero (0) y cinco (5) unidades del recurso compartido.<br>
+        <br>
+        Cada unidad que usted decida extraer generará un beneficio de 1 punto. Este beneficio es solo para usted.<br>
+        Cada unidad que no sea extraída generará un beneficio de 0.35 puntos para cada miembro del grupo.<br>
+        <br>
+        Su pago PARCIAL será = [Unidades extraidas] + 0.35 x [Unidades remanentes en el recurso compartido].<br>
+        <br>
+        Las ganancias parciales de los miembros de cada grupo serán sumadas para determinar el ranking grupal.<br>
+        El ranking grupal definirá el multiplicador de sus ganancias.<br>
+        <table class="table-condensed" style="width:500px; margin-top:20px;">
+            <tr><td><strong>Ranking Grupal</strong></td><td><strong>Multiplicador</strong></td></tr>
+            <tr><td>1 (mayores ganancias):</td><td>1.10 (10% más de ganancia)</td></tr>
+            <tr><td>2:</td><td>1.05 (5% más de ganancia)</td></tr>
+            <tr><td>3:</td><td>1.00 (ganancias no se afectan)</td></tr>
+            <tr><td>4:</td><td>0.95 (5% menos de ganancias)</td></tr>
+            <tr><td>5 (menores ganancias):</td><td>0.90 (10% menos de ganancias)</td></tr>
+        </table>
+        <br>
+        <b>Su pago FINAL será = multiplicador x (pago PARCIAL).</b><br>
+        <br>
+    </p>
+
+</div>
+
+    {% next_button %}
+{% endblock %}
+
+

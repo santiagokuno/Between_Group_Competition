@@ -1,0 +1,60 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+   Respuesta a pregunta de comprensión
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Su respuesta <span  class="text-info">{{ player.question }}</span> fue {% if player.question_correct %}<span class="text-success">correcta</span>
+        {% else %}<span class="text-danger">incorrecta.</span>{% endif %}
+    </p>
+    <hr>
+    <p>
+        <b>Pregunta:</b><br>
+        Suponga que usted extrajo 3 unidades.<br>
+        Luego que todos decidieran cuánto extraer, quedaron 10 unidades del recurso compartido.<br>
+        <br>
+        <b>¿Cuales son sus ganancias?</b><br>
+    </p>
+    <hr>
+    <p>
+        <strong>Solución: 6.5</strong>
+    </p>
+
+    <p>
+        <strong>Explicación:</strong><br>
+        [3 puntos de extracción] + [0.35 x 10 puntos de recurso compartido] = 6.5 puntos
+    </p>
+
+
+<div class="box effect7">
+
+    <p>
+        <b>Instrucciones</b>
+    </p>
+
+    <p>
+        Usted está en un grupo con otros tres (3) participantes.<br>
+        El grupo será el mismo durante todo el bloque.<br>
+        Usted tiene derecho a extraer entre cero (0) y cinco (5) unidades del recurso compartido.
+    </p>
+
+    <p>
+        Cada unidad que usted decida extraer generará un beneficio de 1 punto.<br>
+        Este beneficio es solo para usted.<br>
+        Cada unidad que no sea extraída generará un beneficio de 0.35 puntos para cada miembro del grupo.
+    </p>
+
+    <p>
+        Su pago será = [Unidades extraidas] + 0.35 x [Unidades remanentes en el recurso compartido].
+    </p>
+
+</div>
+
+    {% next_button %}
+
+{% endblock %}
+

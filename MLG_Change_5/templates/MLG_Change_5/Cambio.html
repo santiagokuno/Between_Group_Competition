@@ -1,0 +1,157 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Instrucciones del juego, Bloque 2.
+{% endblock %}
+
+{% block content %}
+
+
+<style type="text/css">
+    ul {
+        list-style-type:circle;
+        padding-left:20px;
+    }
+    h3.panel-sub-heading {
+        padding-bottom:10px;
+        padding-left:4px;
+    }
+
+    td, th{
+        text-align: center;
+    }
+
+    .rotate90 {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        position: absolute;
+        top: 60%;
+    }
+
+    .instructions {
+        position: relative;
+        text-shadow: 0 1px 0 #fff;
+        line-height: 1.5;
+        margin: 60px auto;
+        background-color: #f5f5dc;
+        background-image: linear-gradient(to bottom, #f5f5dc 0px, #fbfbeb 100%);
+        padding-top: 5px;
+        padding-bottom: 15px;
+        margin-top: 20px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .instructions:before, .instructions:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width:300px;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+        transform: rotate(-3deg);
+    }
+
+    .instructions:after {
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto;
+    }
+</style>
+
+<div class="instructions well well-lg" style="">
+
+    <p>
+        Para este nuevo bloque de 10 rondas usted será asignado a un nuevo grupo de cuatro (4) jugadores.
+    </p>
+
+    <p>
+        <b> Las reglas de extracción son idénticas a las del <strong>Bloque 1.</strong> </b><br>
+        Cada grupo tiene a su disposición 20 unidades de un recurso compartido en cada ronda.<br>
+        Cada unidad que usted decida extraer le generará un beneficio de un (1) punto. Este beneficio es sólo para usted.<br>
+        Cada unidad que no sea extraía por ningún miembro del grupo generará un beneficio de 1.4 puntos a dividir en partes
+        iguales entre todos.<br>
+        Esto es, un beneficio de 0.35 puntos para cada participante.<br>
+        Cada miembro del grupo tendrá derecho a extraer entre cero (0) y cinco (5) unidades del recurso por ronda.<br>
+        <br>
+        Su pago PARCIAL, en cada ronda, será: <br>
+        un (1) punto por cada unidad extraída, más 0.35 puntos por cada unidad remanente en el recurso compartido.<br>
+        <br>
+        <b> Para este bloque se cambia la regla de pago:</b><br>
+        Las ganancias parciales de los miembros de cada grupo serán sumadas para determinar el ranking grupal.<br>
+        Para calcular sus ganancias finales (de la ronda), sus ganancias parciales serán ponderadas con un <b>multiplicador.</b><br>
+        Este <b>multiplicador</b> depende del ranking de su grupo.<br>
+        <br>
+        Su pago FINAL, en cada ronda, será:
+        <strong>multiplicador x (pago parcial).</strong>
+    </p>
+
+    <table class="table-condensed" style="width:500px; margin-top:20px;">
+    <tr><td><strong>Ranking Grupal</strong></td><td><strong>Multiplicador</strong></td></tr>
+    <tr><td>1 (mayores ganancias):</td><td>1.10 (10% más de ganancia)</td></tr>
+    <tr><td>2:</td><td>1.05 (5% más de ganancia)</td></tr>
+    <tr><td>3:</td><td>1.00 (ganancias no se afectan)</td></tr>
+    <tr><td>4:</td><td>0.95 (5% menos de ganancias)</td></tr>
+    <tr><td>5 (menores ganancias):</td><td>0.90 (10% menos de ganancias)</td></tr>
+    </table>
+
+</div>
+
+<div class="instructions well well-lg" style="">
+
+    <p>
+        <hr>
+        ¿Qué pasa si dos o más grupos <strong>empatan</strong> en el ranking?<br>
+        Se ponderará el multiplicador correspondiente a dichas posiciones en el ranking:<br>
+        <br>
+        i. Si hay dos (3) grupos empatados en el primer lugar entonces el multiplicador es (1.10+1.05+1.00) / 3 = 1.05 <br>
+        ii. Si hay tres (3) grupos empatados en el ultimo lugar entonces el multiplicador es (1.00+0.95+0.90) / 3 = 0.95  <br>
+        iii. Si los cinco (5) grupos empatan entonces el multiplicador es (1.10+1.05+1.00+0.95+0.90) / 5 = 1.00 <br>
+        <br>
+    </p>
+
+</div>
+
+<div class="box effect7">
+
+    <p>
+        <hr>
+        <h4>Ejemplo 1:</h4><br>
+        Suponga que usted decidió extraer 3 unidades del recurso compartido.<br>
+        Luego que todos decidieran cuánto extraer quedan 8 unidades en el recurso compartido.<br>
+        <br>
+        Sus ganancias parciales serían: 3 puntos + 0.35 x 8 puntos = 5.8 puntos.
+        <br>
+        La suma de las ganancias parciales de los cuatro miembros de su grupo es de 23.2.<br>
+        La suma de las ganancias parciales de los otros cuatro grupos son 18.0, 19.5, 20.4 y 22.8.<br>
+        El ranking de su grupo es el 1.<br>
+        <br>
+        Sus ganancias finales serían 1.10 x 5.8 puntos =  6.4 puntos.<br>
+        <br>
+        <hr>
+        <h4>Ejemplo 2:</h4><br>
+        Suponga que usted decidió extraer 3 unidades del recurso compartido.<br>
+        Luego que todos decidieran cuánto extraer quedan 8 unidades en el recurso compartido.<br>
+        <br>
+        Sus ganancias parciales serían: 3 puntos + 0.35 x 8 puntos = 5.8 puntos.
+        <br>
+        La suma de las ganancias parciales de los cuatro miembros de su grupo es de 23.2.<br>
+        La suma de las ganancias parciales de los otros cuatro grupos son 24.0, 25.2, 27.2 y 28.0.<br>
+        El ranking de su grupo es el 5.<br>
+        <br>
+        Sus ganancias finales serían 0.90 x 5.8 puntos =  5.2 puntos
+    </p>
+
+</div>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Bienvenido
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Agradecemos su asistencia. Por su presencia el día de hoy ha ganado $5.000 pesos.<br>
+        Estos serán sumados a las ganancias finales que obtenga en esta actividad.<br>
+        <br>
+        La actividad consta de tres bloques, el primero y el ultimo de cinco (5) rondas cada uno; <br>
+        el segundo compuesto por diez (10) rondas de un juego. <br>
+        El juego en todos los bloques es igual, y sólo se diferencian en el grupo de personas con las cuales juega usted.<br>
+        Para cada bloque las doce (12) personas en la sesión serán divididas en tres (3) grupos de cuatro (4) jugadores.<br>
+        <br>
+        Usted será asignado aletoariamente a uno de los grupos en cada bloque.<br>
+        Esto quiere decir que usted hará parte de un grupo diferente en cada bloque.<br>
+        En ningún momento sabrá quienes son sus compañeros de equipo.<br>
+        <br>
+        En el juego ustéd podrá ganar puntos de acuerdo a sus decisiones y a las decisiones de los demás participantes.<br>
+        Cada punto que obtenga durante la actividad será pagado a $800 pesos.<br>
+        <br>
+        Al final se seleccionarán aleatoriamente cinco (5) rondas de las veinte (20 = 5+10+5) que jugará entre los diversos bloques.<br>
+        Usted recibirá las ganancias de las cinco rondas, más los $5,000 pesos que ganó por su asistencia puntual.<br>
+        <br>
+        Al dar inicio a la actividad seleccionando el botón "siguiente", usted acepta que los datos sobre sus decisiones<br>
+        sean usados con fines de investigación. Está información será anónima, es decir no será posible vincular los datos de sus decisiones<br>
+        con información que lo permita identificar. <br>
+        <br>
+        <strong>Por favor guarde silencio durante la actividad.</strong><br>
+        <br>
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

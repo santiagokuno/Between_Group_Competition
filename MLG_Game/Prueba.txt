@@ -1,0 +1,33 @@
+Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 20:32:19) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> list(enumerate([100, 80, 80, 70]))
+[(0, 100), (1, 80), (2, 80), (3, 70)]
+>>> help(sort)
+
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    help(sort)
+NameError: name 'sort' is not defined
+>>> ejemplo = [23, 34, 52, 65]
+>>> ejemplo
+[23, 34, 52, 65]
+>>> ejemplo.sort()
+>>> ejemplo
+[23, 34, 52, 65]
+>>> otro_caso = [23, 17, 5, 80, 72]
+>>> otro_caso
+[23, 17, 5, 80, 72]
+>>> otro_caso.sort()
+>>> otro_caso
+[5, 17, 23, 72, 80]
+>>> list(enumerate(otro_caso, start=1))
+[(1, 5), (2, 17), (3, 23), (4, 72), (5, 80)]
+>>> another_case = [1, 3, 2, 7, 2, 9, 2]
+>>> another_case
+[1, 3, 2, 7, 2, 9, 2]
+>>> another_case.sort()
+>>> another_case
+[1, 2, 2, 2, 3, 7, 9]
+>>> list(enumerate(another_case, start=1))
+[(1, 1), (2, 2), (3, 2), (4, 2), (5, 3), (6, 7), (7, 9)]
+>>> 

@@ -1,0 +1,43 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Decisión de extracción. Ronda {{ subsession.round_number }} de 5 (Bloque 3)
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.extraction with label="¿Cuánto unidades deseo extraer del recurso compartido?" %}
+
+<div class="box effect7">
+
+    <p>
+        <b>Instrucciones</b>
+    </p>
+
+    <p>
+        {% if subsession.round_number == 1 %}<b>Sus tres compañeros de grupo en este segundo bloque son diferentes
+        de los que tenía durante el primer y segundo bloque</b><br>. Usted está en un grupo con otros tres (3) participantes.<br>
+        {% else %}Usted está en un grupo con otros tres (3) participantes.<br> {% endif %}
+        El grupo será el mismo durante todo el bloque.<br>
+        Usted tiene derecho a extraer entre cero (0) y cinco (5) unidades del recurso compartido.
+    </p>
+
+    <p>
+        Cada unidad que usted decida extraer generará un beneficio de 1 punto.<br>
+        Este beneficio es solo para usted.<br>
+        Cada unidad que no sea extraída generará un beneficio de 0.35 puntos para cada miembro del grupo.
+    </p>
+
+    <p>
+        Su pago será = [Unidades extraidas] + 0.35 x [Unidades remanentes en el recurso compartido].
+    </p>
+
+
+
+</div>
+
+
+    {% next_button %}
+
+{% endblock %}

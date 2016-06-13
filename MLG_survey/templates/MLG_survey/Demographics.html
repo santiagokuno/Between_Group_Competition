@@ -1,0 +1,32 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Encuesta, Pg. 2 de 4.
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        {# Mientras calculamos su pago le solicitamos que responda a las siguientes preguntas. #}
+    </p>
+
+<div class="box effect7">
+
+    {% formfield player.q_age %}
+    {% formfield player.q_gender %}
+    {% formfield player.q_estrato %}
+    {% formfield player.q_graduated %}
+    {% formfield player.q_career_1 %}
+    {% formfield player.q_career_2 %}
+    {% formfield player.q_postgraduate %}
+    {% formfield player.q_master_1 %}
+    {% formfield player.q_master_2 %}
+    {% formfield player.q_game_part %}
+    {% formfield player.q_part_time %}
+
+</div>
+
+    {% next_button %}
+
+{% endblock %}

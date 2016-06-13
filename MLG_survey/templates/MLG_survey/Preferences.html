@@ -1,0 +1,47 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Encuesta, Pg. 3 de 4.
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        {# Mientras calculamos su pago le solicitamos que responda a las siguientes preguntas. #}
+    </p>
+
+<div class="box effect7">
+
+    <p>
+        Cómo se percibe a sí mismo: ¿Es usted una persona que está siempre lista a tomar riesgos o prefiere evitarlos?. Señale una opción en una escala de uno (1) a diez (10).
+    </p>
+
+    <p>
+        Uno (1) significa: "No me gusta para nada tomar riesgos"; y diez (10) significa "Siempre estoy dispuesto a tomar riesgos".  {% formfield player.p_risk %}
+    </p>
+
+
+</div>
+
+<div class="box effect7">
+
+    <p>
+        Para cada una de las siguientes preguntas señale la opción que le parezca más apropiada.
+    </p>
+
+    {% formfield player.p_compet_1 %}
+    {% formfield player.p_compet_2 %}
+    {% formfield player.p_compet_3 %}
+    {% formfield player.p_compet_4 %}
+    {% formfield player.p_compet_5 %}
+    {% formfield player.p_compet_6 %}
+
+</div>
+
+
+    {% next_button %}
+
+{% endblock %}
+
+

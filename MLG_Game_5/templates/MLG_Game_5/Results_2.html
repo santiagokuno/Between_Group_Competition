@@ -1,0 +1,30 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Resultados Ronda {{ subsession.round_number }} de 10 (Bloque 2)
+{% endblock %}
+
+{% block content %}
+
+<div class="box effect7">
+    <p></p>
+<table>
+    <tr><td>Usted extrajo:</td><td>{{ player.extraction }} Unidades. </td></tr>
+    <tr><td>El remanente de recurso compartido en su grupo fue:</td><td>{{ Fondo_Comun }} Unidades.</td></tr>
+    <tr><td>Las ganancias totales de su grupo fueron*:</td><td>{{ Ganancias_grupo }}.</td></tr>
+
+    <tr><td colspan="2"><hr/></td></tr>
+    <tr><td>De acuerdo a las ganancias (siendo el primero el que más obtuvo).</td></tr>
+    <tr><td>Su ranking entre todos los competidores fue:</td><td>{{ player.ranking }} de 20 jugadores.</td></tr>
+    <tr><td>El ranking de su grupo fue:</td><td>{{ player.gp_ranking }} de 5 grupos.</td></tr>
+    <tr><td colspan="2"><hr/></td></tr>
+
+    <tr><td>Sus ganancias parciales fueron:</td><td>{{ Ganancias_parciales }}. </td></tr>
+    <tr><td><strong>SU PAGO FINAL DE LA RONDA ES DE:</strong></td><td><strong>{{ Pago_final }}. </strong></td></tr>
+</table>
+
+</div>
+
+    {% next_button %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Encuesta, Pg. 4 de 4.
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        {# Mientras calculamos su pago le solicitamos que responda a las siguientes preguntas.#}
+    </p>
+
+<div class="box effect7">
+
+    <p>
+        Para cada una de las siguientes preguntas señale la opción que le parezca más apropiada.
+    </p>
+
+    {% formfield player.p_trust_1 %}
+    {% formfield player.p_trust_2 %}
+    {% formfield player.p_trust_3 %}
+    {% formfield player.p_trust_4 %}
+    {% formfield player.p_trust_5 %}
+
+</div>
+
+
+    {% next_button %}
+
+{% endblock %}
+
+

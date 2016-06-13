@@ -1,0 +1,19 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Muchas gracias por su participación.
+{% endblock %}
+
+{% block content %}
+
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Forma de pago:</strong></p>
+            <p>A continuación se sortearan las rondas y se calcularán los pagos para cada persona.</p>
+            <p>Por favor permanezca sentado hasta que así lo indique el coordinador.</p>
+            <p>Su código para reclamar sus ganancias es: <strong>{{ redemption_code }}.</strong></p>
+        </div>
+    </div>
+
+{% endblock %}

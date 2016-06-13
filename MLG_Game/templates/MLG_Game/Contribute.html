@@ -1,0 +1,49 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Decisión de extracción, Ronda {{ subsession.round_number }} de 10 (Bloque 2)
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.extraction with label="¿Cuánto unidades desea extraer del recurso compartido?" %}
+
+<div class="box effect7">
+
+    <p>
+        <b>Instrucciones:</b>
+    </p>
+
+    <p>
+        {% if subsession.round_number == 1 %}<b>Sus tres compañeros de grupo en este segundo bloque son diferentes
+        de los que tenía durante el primer bloque</b><br>. Usted está en un grupo con otros tres (3) participantes.<br>
+        {% else %}Usted está en un grupo con otros tres (3) participantes.<br> {% endif %}
+        El grupo será el mismo durante todo el bloque.<br>
+        Cada grupo tiene a su disposición 20 unidades de un recurso compartido en cada ronda.<br>
+        Usted tiene derecho a extraer entre cero (0) y cinco (5) unidades del recurso compartido.<br>
+        <br>
+        Cada unidad que usted decida extraer generará un beneficio de 1 punto. Este beneficio es solo para usted.<br>
+        Cada unidad que no sea extraída generará un beneficio de 0.35 puntos para cada miembro del grupo.<br>
+        <br>
+        Su pago PARCIAL será = [Unidades extraidas] + 0.35 x [Unidades remanentes en el recurso compartido].<br>
+        <br>
+        Las ganancias parciales de los miembros de cada grupo serán sumadas para determinar el ranking grupal.<br>
+        El ranking grupal definirá el multiplicador de sus ganancias.<br>
+        <table class="table-condensed" style="width:500px; margin-top:20px;">
+            <tr><td><strong>Ranking Grupal</strong></td>
+            <td><strong>Multiplicador</strong></td></tr>
+            <tr><td>1 (mayores ganancias):</td><td>1.10 (10% más de ganancias)</td></tr>
+            <tr><td>2</td><td>1.00 (ganancias no se afectan)</td></tr>
+            <tr><td>3 (menores ganancias):</td><td>0.90 (10% menos de ganancias)</td></tr>
+        </table>
+        <br>
+        <b>Su pago FINAL será = multiplicador x (pago PARCIAL).</b><br>
+        <br>
+    </p>
+
+</div>
+
+    {% next_button %}
+
+{% endblock %}
