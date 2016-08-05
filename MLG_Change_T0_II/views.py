@@ -11,6 +11,14 @@ from .models import Constants
 class Cambio(Page):
     pass
 
+class Pregunta(Page):
+
+    form_model = models.Player
+    form_fields = ['question_1']
+
+class Respuesta(Page):
+    pass
+
 class Espera(WaitPage):
 
     wait_for_all_groups = True
@@ -22,6 +30,8 @@ class Begin(Page):
 
 page_sequence = [
     Cambio,
+    Pregunta,
+    Respuesta,
     Espera,
     Begin
 ]
