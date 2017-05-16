@@ -1,1 +1,0 @@
-# Between-group_competition
